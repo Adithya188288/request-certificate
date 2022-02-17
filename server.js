@@ -25,7 +25,12 @@ var greenlock = Greenlock.create({
 greenlock.manager
     .defaults({
         agreeToTerms: true,
-        subscriberEmail: 'adithyawordpress05gmail.com'
+        subscriberEmail: 'adithyawordpress05gmail.com',
+        challenges: {
+            "http-01": {
+              module: "acme-http-01-standalone",
+              webroot: "./"
+        }}
     })
     .then(function(fullConfig) {
         console.log('gg', fullConfig)
